@@ -1,17 +1,16 @@
 #!/bin/bash
 function push {
-  echo $1
   if [ -z $1 ]; then
     echo "No commit message supplied (Usage: $0 <commit message>)"
     exit 1
   else
-    export COMMIT_MESSAGE="$1"
+    cd COMMIT_MESSAGE="$1"
   fi
   echo "adding .cson and .less files to staging and commiting them with message: $COMMIT_MESSAGE"
   cd ~/.atom_config
   git add .
   git commit -m '$COMMIT_MESSAGE'
-  #git push origin master
+  git push origin master
   echo
 }
 
@@ -40,9 +39,7 @@ case "$1" in
     copy_from_atom
     ;;
   push)
-    echo '------------------'
-    echo $2
-    push $2
+    push "$2"
     ;;
   *)
     echo $"Usage: $0 {copy_to_atom|copy_from_atom|push}"
