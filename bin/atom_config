@@ -7,18 +7,27 @@ function push {
     export COMMIT_MESSAGE="$1"
   fi
   echo "adding .cson and .less files to staging and commiting them with message: $COMMIT_MESSAGE"
+  pushd
+  cd ~/.atom_config
+  git add .
+  git commit -m $COMMIT_MESSAGE
+  git push origin master
+  popd
+  echo .
 }
 
 function copy_from_atom {
   echo "Copying .cson and .less files from ~/.atom into local repo (assumed to be ~/.atom_config)"
   cp ~/.atom/*.cson ~/.atom_config
   cp ~/.atom/*.less ~/.atom_config
+  echo .
 }
 
 function copy_to_atom {
   echo "Copying .cson and .less files from local repo (assumed to be ~/.atom_config) into ~/.atom"
   cp ~/.atom_config/*.cson ~/.atom/
-  cp ~/.atom_config*.less ~/.atom/
+  cp ~/.atom_config/*.less ~/.atom/
+  echo .
 }
 
 

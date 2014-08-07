@@ -1,6 +1,3 @@
-
-#
-
 '.editor':
   'alt-space':	'autocomplete:toggle'
   'cmd-ctrl-r': 'rails-rspec:toggle-spec-file'
