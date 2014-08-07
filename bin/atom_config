@@ -9,8 +9,8 @@ function push {
   echo "adding .cson and .less files to staging and commiting them with message: $COMMIT_MESSAGE"
   cd ~/.atom_config
   git add .
-  git commit -m $COMMIT_MESSAGE
-  git push origin master
+  git commit -m "$COMMIT_MESSAGE"
+  #git push origin master
   echo
 }
 
