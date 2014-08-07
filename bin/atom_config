@@ -7,12 +7,10 @@ function push {
     export COMMIT_MESSAGE="$1"
   fi
   echo "adding .cson and .less files to staging and commiting them with message: $COMMIT_MESSAGE"
-  pushd
   cd ~/.atom_config
   git add .
   git commit -m $COMMIT_MESSAGE
   git push origin master
-  popd
   echo
 }
 
