@@ -28,6 +28,8 @@ function copy_to_atom {
   echo
 }
 
+echo $1
+echo $2
 
 case "$1" in
   copy_to_atom)
@@ -37,6 +39,8 @@ case "$1" in
     copy_from_atom
     ;;
   push)
+    echo '------------------'
+    echo $2
     push $2
     ;;
   *)
