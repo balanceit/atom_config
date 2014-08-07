@@ -1,0 +1,40 @@
+'editor':
+  'showInvisibles': true
+  'autoIndentOnPaste': true
+  'fontSize': 14
+'core':
+  'disabledPackages': [
+    'autoflow'
+    'language-java'
+    'language-make'
+    'language-objective-c'
+    'language-php'
+    'metrics'
+    'package-generator'
+    'release-notes'
+    'autocomplete-plus'
+    'autocomplete'
+    'vim-mode'
+  ]
+  'themes': [
+    'lanai-dark-ui'
+    'flatland-dark'
+  ]
+  'audioBeep': false
+'exception-reporting':
+  'userId': 'ad9dc136-ed6f-186c-8f26-9bc556bc5de9'
+'release-notes':
+  'viewedVersion': '0.73.0'
+'welcome':
+  'showOnStartup': false
+'metrics':
+  'userId': '4757d36d2d72b7ac0fc4629cf9b0763d11f5a059'
+'autosave':
+  'enabled': true
+'autocomplete-plus':
+  'includeCompletionsFromAllBuffers': true
+'autocomplete':
+  'includeCompletionsFromAllBuffers': true
+'whitespace': {}
+'rspec':
+  'command': 'bundle exec rspec'

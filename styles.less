@@ -1,0 +1,117 @@
+@import "ui-variables";
+@tab-radius: 0px;
+@modified-icon-width: 8px;
+@tab-skew: 30deg;
+@tab-top-padding: 3px;
+@tab-bottom-border-height: 5px;
+@tab-border: 1px solid @tab-border-color;
+@tab-height: 20px;
+
+.tab-bar {
+  height: @tab-height + @tab-top-padding + @tab-bottom-border-height;
+
+  &:after {
+    height: @tab-bottom-border-height;
+  }
+
+  .tab {
+    top: @tab-top-padding;
+    height: @tab-height;
+    line-height: @tab-height;
+    border-top-right-radius: @tab-radius;
+    box-shadow: inset -1px -1px 1px rgba(0,0,0, .05);
+    -webkit-transform: skewX(@tab-skew);
+
+    &:before {
+      height: @tab-height;
+      border-top-left-radius: @tab-radius;
+      -webkit-transform: skewX(133deg);
+    }
+
+    .close-icon {
+      line-height: @tab-height;
+      -webkit-transform: skewX(-@tab-skew);
+
+      &:hover {
+        color: inherit;
+      }
+    }
+    &.modified:not(:hover) .close-icon {
+      top: @tab-height/2 - @modified-icon-width/2 + 1px;
+    }
+
+    .title{
+      -webkit-transform: skewX(-@tab-skew);
+    }
+
+  }
+
+  .tab.active {
+    line-height: @tab-height - 2px;
+
+    .close-icon {
+      line-height: @tab-height - 1px;
+    }
+
+    &, &:before {
+      height: @tab-height + 1px;
+    }
+  }
+
+  .placeholder {
+    height: @tab-height + @tab-top-padding + @tab-bottom-border-height;
+    &:after {
+      top: @tab-height + @tab-top-padding + @tab-bottom-border-height;
+    }
+  }
+}
+
+
+
+
+/* I prefer a more compact tree-view */
+.tree-view {
+  font-size: 11px;
+  .list-item {
+    line-height: 18px !important;
+  }
+  .selected:before, .selected:before {
+    height: 18px !important;
+  }
+  .icon:before {
+    color: #1975FF;
+    font-size: 11px;
+    width: 10px;
+    height: 10px;
+    opacity: .6;
+    top: 0px;
+  }
+  .header:before {
+    font-size: 10px !important;
+    opacity: .6;
+    margin-right: 0px !important;
+  }
+}
+
+// ruby symbols
+.constant.other.symbol.ruby {
+  color: #75ACFF;
+}
+
+// ruby numbers
+.constant.numeric.ruby {
+  color: #FF9933;
+}
+
+//search bar stuff
+.panel-bottom {
+  &.find-and-replace {
+    padding: 5px;
+  }
+  &.project-find.padded {
+    padding: 5px;
+  }
+  ul.block, div.block {
+    margin-bottom: 2px;
+  }
+}

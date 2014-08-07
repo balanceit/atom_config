@@ -1,0 +1,38 @@
+#!/bin/bash
+function push {
+  if [ -z $1 ]; then
+    echo "No commit message supplied (Usage: $0 <commit message>)"
+    exit 1
+  else
+    export COMMIT_MESSAGE="$1"
+  fi
+  echo "adding .cson and .less files to staging and commiting them with message: $COMMIT_MESSAGE"
+}
+
+function copy_from_atom {
+  echo "Copying .cson and .less files from ~/.atom into local repo (assumed to be ~/.atom_config)"
+  cp ~/.atom/*.cson ~/.atom_config
+  cp ~/.atom/*.less ~/.atom_config
+}
+
+function copy_to_atom {
+  echo "Copying .cson and .less files from local repo (assumed to be ~/.atom_config) into ~/.atom"
+  cp ~/.atom_config/*.cson ~/.atom/
+  cp ~/.atom_config*.less ~/.atom/
+}
+
+
+case "$1" in
+  copy_to_atom)
+    copy_to_atom
+    ;;
+  copy_from_atom)
+    copy_from_atom
+    ;;
+  push)
+    push $2
+    ;;
+  *)
+    echo $"Usage: $0 {copy_to_atom|copy_from_atom|push}"
+    exit 1
+esac
