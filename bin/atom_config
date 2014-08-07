@@ -4,7 +4,7 @@ function push {
     echo "No commit message supplied (Usage: $0 <commit message>)"
     exit 1
   else
-    COMMIT_MESSAGE="$1"
+    export COMMIT_MESSAGE="$1"
   fi
   echo "adding .cson and .less files to staging and commiting them with message: $COMMIT_MESSAGE"
   cd ~/.atom_config
